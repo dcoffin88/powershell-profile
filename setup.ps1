@@ -155,4 +155,3 @@ try {
 catch {
     Write-Error "Failed to install zoxide. Error: $_"
 }
-Exit
