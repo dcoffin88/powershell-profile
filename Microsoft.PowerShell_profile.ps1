@@ -224,7 +224,7 @@ $scriptblock = {
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 
 
-oh-my-posh init pwsh --config .\cobalt2.omp.json | Invoke-Expression
+https://raw.githubusercontent.com/dcoffin88/cobalt2.omp.json
 
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
     Invoke-Expression (& { (zoxide init --cmd cd powershell | Out-String) })
