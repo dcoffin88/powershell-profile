@@ -97,11 +97,16 @@ else {
     }
 }
 
-# Download the cobalt2.omp.json file to the $PROFILE directory
+# Get the parent directory of the $PROFILE
+$profileDirectory = Split-Path -Path $PROFILE -Parent
+
+# Define the path where the cobalt2.omp.json file will be saved (one level up from $PROFILE)
+$ompJsonPath = Join-Path -Path $profileDirectory -ChildPath "cobalt2.omp.json"
+
+# Download the cobalt2.omp.json file
 try {
     $ompJsonUrl = "https://raw.githubusercontent.com/dcoffin88/powershell-profile/refs/heads/main/cobalt2.omp.json"
-    $ompJsonPath = "$PROFILE\cobalt2.omp.json"
-
+    
     Invoke-RestMethod -Uri $ompJsonUrl -OutFile $ompJsonPath
     Write-Host "The cobalt2.omp.json file has been downloaded to [$ompJsonPath]."
 }
