@@ -97,6 +97,18 @@ else {
     }
 }
 
+# Download the cobalt2.omp.json file to the $PROFILE directory
+try {
+    $ompJsonUrl = "https://raw.githubusercontent.com/dcoffin88/powershell-profile/refs/heads/main/cobalt2.omp.json"
+    $ompJsonPath = "$PROFILE\cobalt2.omp.json"
+
+    Invoke-RestMethod -Uri $ompJsonUrl -OutFile $ompJsonPath
+    Write-Host "The cobalt2.omp.json file has been downloaded to [$ompJsonPath]."
+}
+catch {
+    Write-Error "Failed to download cobalt2.omp.json file. Error: $_"
+}
+
 # OMP Install
 try {
     winget install -e --accept-source-agreements --accept-package-agreements JanDeDobbeleer.OhMyPosh
