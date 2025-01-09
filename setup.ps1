@@ -80,8 +80,8 @@ if (!(Test-Path -Path $PROFILE -PathType Leaf)) {
         }
 
         Invoke-RestMethod https://github.com/dcoffin88/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
-	Invoke-WebRequest -Uri https://github.com/dcoffin88/powershell-profile/raw/main/cobalt2.omp.json -OutFile $PROFILE
- 	Invoke-WebRequest -Uri https://github.com/dcoffin88/powershell-profile/raw/main/schema.json -OutFile $PROFILE
+	Invoke-WebRequest -Uri https://github.com/dcoffin88/powershell-profile/raw/main/cobalt2.omp.json -OutFile $PROFILE\cobalt2.omp.json
+ 	Invoke-WebRequest -Uri https://github.com/dcoffin88/powershell-profile/raw/main/schema.json -OutFile $PROFILE\schema.json
         Write-Host "The profile @ [$PROFILE] has been created."
     }
     catch {
