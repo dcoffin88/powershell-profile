@@ -79,7 +79,7 @@ if (!(Test-Path -Path $PROFILE -PathType Leaf)) {
             New-Item -Path $profilePath -ItemType "directory"
         }
 
-        Invoke-RestMethod https://github.com/dcoffin88/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE\Microsoft.PowerShell_profile.ps1
+        Invoke-RestMethod https://github.com/dcoffin88/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
 		<# Invoke-WebRequest -Uri https://github.com/dcoffin88/powershell-profile/raw/main/cobalt2.omp.json -OutFile $PROFILE\cobalt2.omp.json
 		Invoke-WebRequest -Uri https://github.com/dcoffin88/powershell-profile/raw/main/schema.json -OutFile $PROFILE\schema.json #>
         Write-Host "The profile @ [$PROFILE] has been created."
@@ -91,7 +91,7 @@ if (!(Test-Path -Path $PROFILE -PathType Leaf)) {
 else {
     try {
         Get-Item -Path $PROFILE | Move-Item -Destination "oldprofile.ps1" -Force
-        Invoke-RestMethod https://github.com/dcoffin88/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE\Microsoft.PowerShell_profile.ps1
+        Invoke-RestMethod https://github.com/dcoffin88/powershell-profile/raw/main/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
 		<# Invoke-WebRequest -Uri https://github.com/dcoffin88/powershell-profile/raw/main/cobalt2.omp.json -OutFile $PROFILE\cobalt2.omp.json
 		Invoke-WebRequest -Uri https://github.com/dcoffin88/powershell-profile/raw/main/schema.json -OutFile $PROFILE\schema.json #>
         Write-Host "The profile @ [$PROFILE] has been created and old profile removed."
